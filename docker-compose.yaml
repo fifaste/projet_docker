@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  environment:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    volumes:
+      - "./ds_app:/ds_app"
+    command: ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root"]
+
